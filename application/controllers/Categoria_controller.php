@@ -32,11 +32,11 @@ class Categoria_controller extends CI_Controller {
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
 				$mensaje = array('titulo' => 'Categoria', 'body' => 'Registro satisfactorio');
-				//redirect('Dashboard');
-				$this->load->view('dashboard/menu');
+				redirect('Dashboard/categorias');
+				/*$this->load->view('dashboard/menu');
 				$this->load->view('dashboard/categorias/registrar_categoria');
 				$this->load->view('errors/perzonalizado/mensajes', $mensaje);
-				$this->load->view('dashboard/cierredashboard');
+				$this->load->view('dashboard/cierredashboard');*/
 			}
 		}
 	}
@@ -71,7 +71,7 @@ class Categoria_controller extends CI_Controller {
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
 				$mensaje = array('titulo' => 'Usuario', 'body' => 'Registro satisfactorio');
-				redirect('Dashboard');
+				redirect('Dashboard/categorias');
 			}
 		}	
 	}
@@ -82,7 +82,7 @@ class Categoria_controller extends CI_Controller {
 			$result = $this->Tbl_categoria_Model->deleteCategoria($id);
 			if ($result != FALSE){
 		
-				redirect('Dashboard');
+				redirect('Dashboard/categorias');
 			}
 		}
 
