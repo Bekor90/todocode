@@ -35,7 +35,7 @@ class Tareas_controller extends CI_Controller {
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
 				$mensaje = array('titulo' => 'Tarea', 'body' => 'Registro satisfactorio');
-				redirect('Dashboard');
+				redirect('Dashboard/tareas');
 				/*$this->load->view('dashboard/menu');
 				$this->load->view('errors/perzonalizado/mensajes', $mensaje);
 				$this->load->view('dashboard/cierredashboard');	*/
@@ -79,7 +79,7 @@ class Tareas_controller extends CI_Controller {
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
 				$mensaje = array('titulo' => 'Usuario', 'body' => 'Registro satisfactorio');
-				redirect('Dashboard');
+				redirect('Dashboard/tareas');
 			}
 		}	
 	}
@@ -90,7 +90,7 @@ class Tareas_controller extends CI_Controller {
 			$result = $this->Tbl_tarea_Model->deleteTarea($id);
 			if ($result != FALSE){
 		
-				redirect('Dashboard');
+				redirect('Dashboard/tareas');
 			}
 		}
 
