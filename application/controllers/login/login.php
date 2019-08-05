@@ -37,12 +37,12 @@ class Login extends CI_Controller {
 					
 				}						
 			}else{
-				echo 'No se encontro usuario';
-					//redirect('Home');//el usuario no existe 
+				//echo 'No se encontro usuario';
+					redirect('Home');//el usuario no existe 
 			}
 		}else{
-			echo 'Diligencie todos los datos';
-					//redirect('Home');//los campos email y password son necesarios para ingresar
+			//echo 'Diligencie todos los datos';
+					redirect('Home');//los campos email y password son necesarios para ingresar
 		}					
 	}
 }
