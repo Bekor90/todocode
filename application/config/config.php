@@ -21,9 +21,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 | If you need to allow multiple domains, remember that this file is still
 | a PHP script and you can easily do that on your own.
-| http://52.51.85.163/tasks/todo_deploy aws
+| http://52.51.85.163/tasks/todo_deploy   aws
+| https://todocode.herokuapp.com/         heroku
 */
-$config['base_url'] = 'https://todocode.herokuapp.com/';
+$config['base_url'] = 'http://localhost/todo/todocode/';
 
 /*
 |--------------------------------------------------------------------------
@@ -35,7 +36,7 @@ $config['base_url'] = 'https://todocode.herokuapp.com/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = 'views/login.php';
 
 /*
 |--------------------------------------------------------------------------
