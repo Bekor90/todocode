@@ -38,7 +38,7 @@ class Usuarios_controller extends CI_Controller {
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
 				$mensaje = array('titulo' => 'Usuario', 'body' => 'Registro satisfactorio');
-				redirect('Dashboard');
+				redirect('Dashboard/usuarios');
 			}
 		}
 	}
@@ -75,7 +75,7 @@ class Usuarios_controller extends CI_Controller {
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
 				$mensaje = array('titulo' => 'Usuario', 'body' => 'Registro satisfactorio');
-				redirect('Dashboard');
+				redirect('Dashboard/usuarios');
 			}
 		}	
 	}
@@ -86,7 +86,7 @@ class Usuarios_controller extends CI_Controller {
 			$result = $this->Tbl_usuarios_Model->deleteUsuario($id);
 			if ($result != FALSE){
 		
-				redirect('Dashboard');
+				redirect('Dashboard/usuarios');
 			}
 		}
 
