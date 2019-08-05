@@ -75,7 +75,7 @@ class Usuarios_controller extends CI_Controller {
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
 				$mensaje = array('titulo' => 'Usuario', 'body' => 'Registro satisfactorio');
-				redirect('Dashboard');
+				redirect('Dashboard/usuario');
 			}
 		}	
 	}
