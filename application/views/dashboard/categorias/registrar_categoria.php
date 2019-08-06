@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');?>
 	
 	<?php if($error) : ?>
-		<div class="alert alert-success" role="alert">
+		<div class="alert alert-success" role="alert" id="registrar">
 		    <center> <?php echo $mensaje; ?> </center>
 		</div>
 	<?php endif; ?>
