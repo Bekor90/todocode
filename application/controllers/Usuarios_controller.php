@@ -72,7 +72,16 @@ class Usuarios_controller extends CI_Controller {
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/usuarios/editar_usuario', $data);
 				$this->load->view('dashboard/cierredashboard');	
-		}
+		}else{
+			$data = array('result' => '', 
+				      'error' => true, 
+				      'mensaje' => 'Error, al intentar editar',
+			              'class' => 'alert alert-danger');
+			$user['nombre'] = '';
+				$this->load->view('dashboard/menu', $user);
+				$this->load->view('dashboard/usuarios/editar_usuario', $data);
+				$this->load->view('dashboard/cierredashboard');	
+		}	
 
 	}
 	public function editar()
