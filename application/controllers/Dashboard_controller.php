@@ -18,7 +18,7 @@ class Dashboard_controller extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('dashboard/menu');		
+		$this->load->view('dashboard/menu', $data);		
 	}
 	public function usuarios()
 	{
