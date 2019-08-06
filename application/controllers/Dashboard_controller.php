@@ -18,7 +18,7 @@ class Dashboard_controller extends CI_Controller {
 
 	public function index()
 	{
-		$data['nombre'] = $this->session->userdata('nombre');
+		$data['nombre'] = 'Bienvenido '.$this->session->userdata('nombre');
 		$this->load->view('dashboard/menu', $data);		
 	}
 	public function usuarios()
