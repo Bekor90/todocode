@@ -132,7 +132,7 @@ class Usuarios_controller extends CI_Controller {
 				$user['nombre'] = '';
 				$data = array('result' => '', 
 					      'error' => true, 
-					      'mensaje' => 'Error! El usuario se encuentra vinculado a una tarea, eliminela primero.',
+					      'mensaje' => 'Error! Al eliminar el usuario ',
 					      'class' => 'alert alert-danger');				
 				$user['nombre'] = '';
 				$this->load->view('dashboard/menu', $user);
