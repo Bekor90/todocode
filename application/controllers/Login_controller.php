@@ -38,11 +38,11 @@ class Login_controller extends CI_Controller {
 				}						
 			}else{
 				//echo 'No se encontro usuario';
-				$this->load->view('login');
+				redirect('Home');
 			}
 		}else{
 			//echo 'Diligencie todos los datos';
-			$this->load->view('login');
+			redirect('Home');
 		}					
 	}
 }
