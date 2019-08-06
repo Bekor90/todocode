@@ -1,8 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');?>
-
-	 <center> <h3>Tareas</h3></center>
-	 <button class="btn btn-primary" data-toggle="collapse" href="#Collapseregistrar" role="button" aria-expanded="false" aria-controls="registrar" id="registrar">Registrar</button>
+	
+     <?php if($error) : ?>
+		<div class="alert alert-success" role="alert" id="alert">
+		    <center> <?php echo $mensaje; ?> </center>
+		</div>
+     <?php endif; ?>
+     <center> <h3>Tareas</h3></center>
+     <button class="btn btn-primary" data-toggle="collapse" href="#Collapseregistrar" role="button" aria-expanded="false" aria-controls="registrar" id="registrar">Registrar</button>
      <button class="btn btn-primary" data-toggle="collapse" href="#Collapseconsultar" role="button" aria-expanded="false" aria-controls="consultar" id="consultar">Consultar</button>
      
   	<div class="collapse" id="Collapseregistrar">
