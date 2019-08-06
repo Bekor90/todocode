@@ -101,14 +101,20 @@ class Usuarios_controller extends CI_Controller {
 			$result = $this->Tbl_usuarios_Model->deleteUsuario($id);
 			if ($result != FALSE){
 				
-				$data = array('result' => '', 'error' => true, 'mensaje' => 'Error! El usuario se encuentra vinculado a una tarea, eliminela primero.');
+				$data = array('result' => '', 
+					      'error' => true, 
+					      'mensaje' => 'Error! El usuario se encuentra vinculado a una tarea, eliminela primero.',
+					      'class' => 'alert alert-success');				
 				$user['nombre'] = '';
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/usuarios/registrar_usuario', $data);
 				$this->load->view('dashboard/cierredashboard');	
-			}else{
+			}else{				
+				$data = array('result' => '', 
+					      'error' => true, 
+					      'mensaje' => 'Registro eliminado satisfactoriamente.',
+					      'class' => 'alert alert-success');
 				$user['nombre'] = '';
-				$data = array('result' => '', 'error' => true, 'mensaje' => 'Registro eliminado satisfactoriamente');
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/categorias/registrar_usuario', $data);
 				$this->load->view('dashboard/cierredashboard');
