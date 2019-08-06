@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="card-header">
 				<h3>TO DO</h3>
 			</div>
-			<?php if($result) : ?>
+			<?php if($error) : ?>
 			<div class="alert alert-danger" role="alert">
   				<?php echo $mensaje ?>
 			</div>
