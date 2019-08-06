@@ -99,7 +99,7 @@ class Categoria_controller extends CI_Controller {
 						  'mensaje' => 'Registro editado satisfactoriamente',
 					      'class' => 'alert alert-success');
 				$this->load->view('dashboard/menu', $user);
-				$this->load->view('dashboard/categorias/editar_categoria', $data);
+				$this->load->view('dashboard/categorias/registrar_categoria', $data);
 				$this->load->view('dashboard/cierredashboard');
 			}else{
 				$user['nombre'] = '';
@@ -108,7 +108,7 @@ class Categoria_controller extends CI_Controller {
 						  'mensaje' => 'Error, no se editó el usuario',
 					      'class' => 'alert alert-danger');
 				$this->load->view('dashboard/menu', $user);
-				$this->load->view('dashboard/categorias/editar_categoria', $data);
+				$this->load->view('dashboard/categorias/registrar_categoria', $data);
 				$this->load->view('dashboard/cierredashboard');
 			}
 		}	
