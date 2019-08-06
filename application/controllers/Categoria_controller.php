@@ -136,14 +136,22 @@ class Categoria_controller extends CI_Controller {
 					$user['nombre'] = '';
 					$data = array('result' => '', 
 							'error' => true, 
+							'mensaje' => ' No se logró eliminar la categoria.',
+							'class' => 'alert alert-danger');				
+					$user['nombre'] = '';
+					$this->load->view('dashboard/menu', $user);
+					$this->load->view('dashboard/categorias/registrar_categoria', $data);
+					$this->load->view('dashboard/cierredashboard');	
+				}else{				
+					$user['nombre'] = '';
+					$data = array('result' => '', 
+							'error' => true, 
 							'mensaje' => ' Registro eliminado satisfactoriamente.',
 							'class' => 'alert alert-success');				
 					$user['nombre'] = '';
 					$this->load->view('dashboard/menu', $user);
 					$this->load->view('dashboard/categorias/registrar_categoria', $data);
 					$this->load->view('dashboard/cierredashboard');	
-				}else{				
-					
 				}
 			}
 		}
