@@ -8,6 +8,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<div class="card-header">
 				<h3>TO DO</h3>
 			</div>
+			<?php if($result) : ?>
+			<div class="alert alert-danger" role="alert">
+  				<?php echo $mensaje ?>
+			</div>
+			<?php endif; ?>
 			<div class="card-body">
 			<?php echo form_open("Ingresar");?>
 				<form method="POST" action="">
