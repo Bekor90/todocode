@@ -106,8 +106,8 @@ class Usuarios_controller extends CI_Controller {
 				$user['nombre'] = '';
 				$data = array('result' => '', 
 					      'error' => true, 
-					      'mensaje' => 'Error, no se editó el usuario',
-					      'class' => 'alert alert-danger');
+					      'mensaje' => 'Registro editado satisfactoriamente',
+					      'class' => 'alert alert-succes');
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/usuarios/registrar_usuario', $data);
 				$this->load->view('dashboard/cierredashboard');
@@ -115,8 +115,8 @@ class Usuarios_controller extends CI_Controller {
 				$user['nombre'] = '';
 				$data = array('result' => '', 
 					      'error' => true, 
-					      'mensaje' => 'Registro almacenado satisfactoriamente',
-					      'class' => 'alert alert-success');
+					      'mensaje' => 'Error, no se editó el usuario',
+					      'class' => 'alert alert-danger');
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/usuarios/registrar_usuario', $data);
 				$this->load->view('dashboard/cierredashboard');
