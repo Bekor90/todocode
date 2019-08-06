@@ -21,7 +21,7 @@ $route['actualizar/tarea'] = 'Tareas_controller/actualizar';
 $route['eliminar/tarea/(:num)'] = 'tareas/Tareas_controller/eliminarTarea/$1';
 
 $route['registrar/categoria'] = 'Categoria_controller/registrarCategoria';
-$route['view/registrar_categoria'] = 'Categoria_controller/viewRegistrarCategoria';
+$route['viewRegistrar_categoria'] = 'Categoria_controller/viewRegistrarCategoria';
 $route['editar/categoria/(:num)'] = 'Categoria_controller/editarCategoria/$1';
 $route['actualizar/categoria'] = 'Categoria_controller/actualizar';
 $route['eliminar/categoria/(:num)'] = 'Categoria_controller/eliminarCategoria/$1';
