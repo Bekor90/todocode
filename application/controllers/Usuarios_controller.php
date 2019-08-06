@@ -128,12 +128,12 @@ class Usuarios_controller extends CI_Controller {
 	{		
 		if($id >= 0){
 			$result = $this->Tbl_usuarios_Model->deleteUsuario($id);
-			if ($result != FALSE){
+			if ($result){
 				$user['nombre'] = '';
 				$data = array('result' => '', 
 					      'error' => true, 
-					      'mensaje' => 'Error! Al eliminar el usuario ',
-					      'class' => 'alert alert-danger');				
+					      'mensaje' => 'Registro eliminado satisfactoriamente.',
+						  'class' => 'alert alert-success');			
 				$user['nombre'] = '';
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/usuarios/registrar_usuario', $data);
@@ -141,27 +141,15 @@ class Usuarios_controller extends CI_Controller {
 			}else{				
 				$user['nombre'] = '';
 				$data = array('result' => '', 
-							'error' => true, 
-							'mensaje' => 'Registro eliminado satisfactoriamente.',
-							'class' => 'alert alert-success');				
+							'error' => true,
+							'mensaje' => 'Error! Al eliminar el usuario ',
+							'class' => 'alert alert-danger');												
 					$user['nombre'] = '';
 					$this->load->view('dashboard/menu', $user);
 					$this->load->view('dashboard/usuarios/registrar_usuario', $data);
 					$this->load->view('dashboard/cierredashboard');	
-				}
-		}else{
-			$user['nombre'] = '';
-				$data = array('result' => '', 
-					      'error' => true, 
-					      'mensaje' => 'Error! El usuario a eliminar no existe.',
-					      'class' => 'alert alert-danger');				
-				$user['nombre'] = '';
-				$this->load->view('dashboard/menu', $user);
-				$this->load->view('dashboard/usuarios/registrar_usuario', $data);
-				$this->load->view('dashboard/cierredashboard');	
-
+			}
 		}
-
 
 	}
 
