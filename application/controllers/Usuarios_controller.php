@@ -116,7 +116,7 @@ class Usuarios_controller extends CI_Controller {
 					      'class' => 'alert alert-success');
 				$user['nombre'] = '';
 				$this->load->view('dashboard/menu', $user);
-				$this->load->view('dashboard/categorias/registrar_usuario', $data);
+				$this->load->view('dashboard/usuarios/registrar_usuario', $data);
 				$this->load->view('dashboard/cierredashboard');
 			}
 		}
