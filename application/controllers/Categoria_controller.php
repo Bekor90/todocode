@@ -32,13 +32,19 @@ class Categoria_controller extends CI_Controller {
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
 				$mensaje = array('titulo' => 'Categoria', 'body' => 'Registro satisfactorio');
-				$data = array('result' => '');
-				$this->load->view('dashboard/menu');
-				$this->load->view('dashboard/usuarios/registrar_usuario', $data);
-				$this->load->view('dashboard/cierredashboard');	
+				redirect('view/registrar_categoria');
 			}
 		}
 	}
+	
+	public function viewRegistrarCategoria()
+	{
+		$data = array('result' => '');
+		$this->load->view('dashboard/menu');
+		$this->load->view('dashboard/usuarios/registrar_usuario', $data);
+		$this->load->view('dashboard/cierredashboard');
+	}
+	
 
 	public function editarCategoria($id)
 	{	
