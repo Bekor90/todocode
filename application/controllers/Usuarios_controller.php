@@ -107,6 +107,7 @@ class Usuarios_controller extends CI_Controller {
 				$this->load->view('dashboard/usuarios/editar_usuario', $data);
 				$this->load->view('dashboard/cierredashboard');
 			}
+		}
 	}
 
 	public function eliminarUsuario($id)
