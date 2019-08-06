@@ -38,11 +38,11 @@ class Login_controller extends CI_Controller {
 				}						
 			}else{
 				//echo 'No se encontro usuario';
-					redirect('Home');//el usuario no existe 
+				$this->load->view('login');
 			}
 		}else{
 			//echo 'Diligencie todos los datos';
-					redirect('Home');//los campos email y password son necesarios para ingresar
+			$this->load->view('login');
 		}					
 	}
 }
