@@ -22,5 +22,5 @@
           <span class="navbar-toggler-icon"></span>
         </button>
       </nav>
-	    <h3> Bienvenido <?php echo $nombre; ?> </h3>
+	    <h3> <?php echo $nombre; ?> </h3>
 
