@@ -31,14 +31,14 @@ class Categoria_controller extends CI_Controller {
 			if ($result != FALSE){
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
-				$data = array('result' => '', 'error' => true, 'mensaje' => 'Registro almacenado satisfactoriamente');
+				$data = array('result' => '', 'error' => true, 'mensaje' => 'No almacenó el registro');
 				$user['nombre'] = '';
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/categorias/registrar_categoria', $data);
 				$this->load->view('dashboard/cierredashboard');	
 			}else{
 				$user['nombre'] = '';
-				$data = array('result' => '', 'error' => true, 'mensaje' => 'No almacenó el registro');
+				$data = array('result' => '', 'error' => true, 'mensaje' => 'Registro almacenado satisfactoriamente');
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/categorias/registrar_categoria', $data);
 				$this->load->view('dashboard/cierredashboard');
