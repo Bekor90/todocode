@@ -32,7 +32,7 @@ class Categoria_controller extends CI_Controller {
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
 				$mensaje = array('titulo' => 'Categoria', 'body' => 'Registro satisfactorio');
-				redirect('view/registrar_categoria');
+				redirect('viewRegistrar_categoria');
 			}
 		}
 	}
