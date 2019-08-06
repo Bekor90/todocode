@@ -16,7 +16,7 @@
 				<input  type="hidden" value="<?php echo $row->id_usuario;?>" name="id" id="id">
 				<div class="form-group">
 				 	<label for="lbpassword">Password</label>
-		        <input type="password" class="form-control" id="editpassword" name="editpassword" ></input>
+		        <input type="password" class="form-control" value="<?php echo $row->password;?>"  id="editpassword" name="editpassword" ></input>
 		        </div> <!-- form-group -->
 
 				<div class="form-group">
