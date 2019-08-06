@@ -31,14 +31,19 @@ class Categoria_controller extends CI_Controller {
 			if ($result != FALSE){
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
-				$data = array('result' => '', 'error' => true, 'mensaje' => 'No almacenó el registro');
+				$data = array('result' => '', 'error' => true, 
+				'mensaje' => 'No almacenó el registro'
+				'class' => 'alert alert-danger');
+			
 				$user['nombre'] = '';
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/categorias/registrar_categoria', $data);
 				$this->load->view('dashboard/cierredashboard');	
 			}else{
 				$user['nombre'] = '';
-				$data = array('result' => '', 'error' => true, 'mensaje' => 'Registro almacenado satisfactoriamente');
+				$data = array('result' => '', 'error' => true, 
+				'mensaje' => 'Registro almacenado satisfactoriamente'
+				'class' => 'alert alert-success');
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/categorias/registrar_categoria', $data);
 				$this->load->view('dashboard/cierredashboard');
@@ -54,7 +59,7 @@ class Categoria_controller extends CI_Controller {
 			$data = array('result' => $result, 
 				      'error' => true, 
 				      'mensaje' => 'Se edito satisfactoriamente',
-			              'class' => 'alert alert-success');
+			          'class' => 'alert alert-success');
 				$user['nombre'] = '';
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/categorias/editar_categoria', $data);
@@ -63,7 +68,7 @@ class Categoria_controller extends CI_Controller {
 			$data = array('result' => '', 
 				      'error' => true, 
 				      'mensaje' => 'Se edito satisfactoriamente',
-			              'class' => 'alert alert-success');
+			          'class' => 'alert alert-success');
 			$user['nombre'] = '';
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/categorias/editar_categoria', $data);
@@ -92,7 +97,7 @@ class Categoria_controller extends CI_Controller {
 				$data = array('result' => '', 
 					      'error' => true, 
 						  'mensaje' => 'Registro editado satisfactoriamente',
-					      'class' => 'alert alert-succes');
+					      'class' => 'alert alert-success');
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/categorias/editar_categoria', $data);
 				$this->load->view('dashboard/cierredashboard');

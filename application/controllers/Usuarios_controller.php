@@ -76,7 +76,7 @@ class Usuarios_controller extends CI_Controller {
 			$data = array('result' => '', 
 				      'error' => true, 
 				      'mensaje' => 'Se edito satisfactoriamente',
-			              'class' => 'alert alert-success');
+			          'class' => 'alert alert-success');
 			$user['nombre'] = '';
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/usuarios/editar_usuario', $data);
@@ -107,7 +107,7 @@ class Usuarios_controller extends CI_Controller {
 				$data = array('result' => '', 
 					      'error' => true, 
 					      'mensaje' => 'Registro editado satisfactoriamente',
-					      'class' => 'alert alert-succes');
+					      'class' => 'alert alert-success');
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/usuarios/registrar_usuario', $data);
 				$this->load->view('dashboard/cierredashboard');

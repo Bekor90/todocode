@@ -34,14 +34,18 @@ class Tareas_controller extends CI_Controller {
 
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
-				$data = array('result' => '', 'error' => true, 'mensaje' => 'No almacenó el registro');
+				$data = array('result' => '', 'error' => true, 
+				'mensaje' => 'No almacenó el registro',
+				'class' => 'alert alert-danger');
 				$user['nombre'] = '';
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/tareas/registrar_tareas', $data);
 				$this->load->view('dashboard/cierredashboard');	
 			}else{
 				$user['nombre'] = '';
-				$data = array('result' => '', 'error' => true, 'mensaje' => 'Registro almacenado satisfactoriamente');
+				$data = array('result' => '', 'error' => true, 
+				'mensaje' => 'Registro almacenado satisfactoriamente',
+				'class' => 'alert alert-success');
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/tareas/registrar_tareas', $data);
 				$this->load->view('dashboard/cierredashboard');
@@ -101,7 +105,7 @@ class Tareas_controller extends CI_Controller {
 				$data = array('result' => '', 
 					      'error' => true, 
 						  'mensaje' => 'Registro editado satisfactoriamente',
-					      'class' => 'alert alert-succes');
+					      'class' => 'alert alert-success');
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/tareas/editar_tarea', $data);
 				$this->load->view('dashboard/cierredashboard');
