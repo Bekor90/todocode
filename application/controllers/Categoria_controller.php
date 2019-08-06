@@ -31,21 +31,19 @@ class Categoria_controller extends CI_Controller {
 			if ($result != FALSE){
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
-				$mensaje = array('titulo' => 'Categoria', 'body' => 'Registro satisfactorio');
-				redirect('viewRegistrar_categoria');
+				$data = array('result' => '', 'error' => true, 'mensaje' => 'Registro almacenado satisfactoriamente');
+				$this->load->view('dashboard/menu');
+				$this->load->view('dashboard/categorias/registrar_categoria', $data);
+				$this->load->view('dashboard/cierredashboard');	
+			}else{
+				$data = array('result' => '', 'error' => true, 'mensaje' => 'No almacenó el registro');
+				$this->load->view('dashboard/menu');
+				$this->load->view('dashboard/categorias/registrar_categoria', $data);
+				$this->load->view('dashboard/cierredashboard');
 			}
 		}
 	}
 	
-	public function viewRegistrarCategoria()
-	{
-		$data = array('result' => '');
-		$this->load->view('dashboard/menu');
-		$this->load->view('dashboard/usuarios/registrar_usuario', $data);
-		$this->load->view('dashboard/cierredashboard');
-	}
-	
-
 	public function editarCategoria($id)
 	{	
 		$data = array('result' => '');
