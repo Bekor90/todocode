@@ -13,12 +13,12 @@ $route['Dashboard/salir'] = 'Dashboard_controller/salir';
 $route['registrar/usuario'] = 'Usuarios_controller/registrarUsuarios';
 $route['editar/usuario/(:num)'] = 'Usuarios_controller/editarUsuarios/$1';
 $route['actualizar/usuario'] = 'Usuarios_controller/editar';
-$route['eliminar/usuario/(:num)'] = 'usuarios/Usuarios_controller/eliminarUsuario/$1';
+$route['eliminar/usuario/(:num)'] = 'Usuarios_controller/eliminarUsuario/$1';
 
 $route['registrar/tarea'] = 'Tareas_controller/registrarTareas';
 $route['editar/tarea/(:num)'] = 'Tareas_controller/editarTarea/$1';
 $route['actualizar/tarea'] = 'Tareas_controller/actualizar';
-$route['eliminar/tarea/(:num)'] = 'tareas/Tareas_controller/eliminarTarea/$1';
+$route['eliminar/tarea/(:num)'] = 'Tareas_controller/eliminarTarea/$1';
 
 $route['registrar/categoria'] = 'Categoria_controller/registrarCategoria';
 $route['viewRegistrar_categoria'] = 'Categoria_controller/viewRegistrarCategoria';
