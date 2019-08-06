@@ -64,6 +64,10 @@ class Usuarios_controller extends CI_Controller {
 		if($id > 0){
 			$result = $this->Tbl_usuarios_Model->findByUsuarios($id);
 			$data['result'] = $result;
+			$data = array('result' => $result, 
+				      'error' => false, 
+				      'mensaje' => '',
+			              'class' => 'alert alert-danger');
 			$user['nombre'] = '';
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/usuarios/editar_usuario', $data);
