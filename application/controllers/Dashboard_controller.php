@@ -24,21 +24,24 @@ class Dashboard_controller extends CI_Controller {
 	public function usuarios()
 	{
 		$data = array('result' => '', 'error' => false, 'mensaje' => '');
-		$this->load->view('dashboard/menu');
+		$user['nombre'] = '';
+		$this->load->view('dashboard/menu', $user);
 		$this->load->view('dashboard/usuarios/registrar_usuario', $data);
 		$this->load->view('dashboard/cierredashboard');	
 	}
 	public function tareas()
 	{
 		$data = array('result' => '', 'error' => false, 'mensaje' => '');
-		$this->load->view('dashboard/menu');
+		$user['nombre'] = '';
+		$this->load->view('dashboard/menu', $user);
 		$this->load->view('dashboard/tareas/registrar_tareas', $data);
 		$this->load->view('dashboard/cierredashboard');	
 	}
 	public function categorias()
 	{
 		$data = array('result' => '', 'error' => false, 'mensaje' => '');
-		$this->load->view('dashboard/menu');
+		$user['nombre'] = '';
+		$this->load->view('dashboard/menu', $user);
 		$this->load->view('dashboard/categorias/registrar_categoria', $data);
 		$this->load->view('dashboard/cierredashboard');		
 	}
