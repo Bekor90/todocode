@@ -37,14 +37,20 @@ class Usuarios_controller extends CI_Controller {
 
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
-				$data = array('result' => '', 'error' => true, 'mensaje' => 'No almacenó el registro');
 				$user['nombre'] = '';
+				$data = array('result' => '', 
+					      'error' => true, 
+					      'mensaje' => 'Registro almacenado satisfactoriamente',
+					      'class' => 'alert alert-danger');
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/usuarios/registrar_usuario', $data);
 				$this->load->view('dashboard/cierredashboard');	
 			}else{
 				$user['nombre'] = '';
-				$data = array('result' => '', 'error' => true, 'mensaje' => 'Registro almacenado satisfactoriamente');
+				$data = array('result' => '', 
+					      'error' => true, 
+					      'mensaje' => 'Registro almacenado satisfactoriamente',
+					      'class' => 'alert alert-success');
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/categorias/registrar_usuario', $data);
 				$this->load->view('dashboard/cierredashboard');
@@ -94,8 +100,18 @@ class Usuarios_controller extends CI_Controller {
 		if($id >= 0){
 			$result = $this->Tbl_usuarios_Model->deleteUsuario($id);
 			if ($result != FALSE){
-		
-				redirect('Dashboard/usuarios');
+				
+				$data = array('result' => '', 'error' => true, 'mensaje' => 'Error! El usuario se encuentra vinculado a una tarea, eliminela primero.');
+				$user['nombre'] = '';
+				$this->load->view('dashboard/menu', $user);
+				$this->load->view('dashboard/usuarios/registrar_usuario', $data);
+				$this->load->view('dashboard/cierredashboard');	
+			}else{
+				$user['nombre'] = '';
+				$data = array('result' => '', 'error' => true, 'mensaje' => 'Registro eliminado satisfactoriamente');
+				$this->load->view('dashboard/menu', $user);
+				$this->load->view('dashboard/categorias/registrar_usuario', $data);
+				$this->load->view('dashboard/cierredashboard');
 			}
 		}
 
