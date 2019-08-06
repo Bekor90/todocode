@@ -1,7 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
       
       <?php if($error) : ?>
-		<div class="alert alert-success" role="alert" id="alert">
+		<div class="<?php echo $class; ?>" role="alert" id="alert">
 		    <center> <?php echo $mensaje; ?> </center>
 		</div>
       <?php endif; ?>
