@@ -139,16 +139,29 @@ class Usuarios_controller extends CI_Controller {
 				$this->load->view('dashboard/usuarios/registrar_usuario', $data);
 				$this->load->view('dashboard/cierredashboard');	
 			}else{				
+				$user['nombre'] = '';
+				$data = array('result' => '', 
+							'error' => true, 
+							'mensaje' => 'Registro eliminado satisfactoriamente.',
+							'class' => 'alert alert-success');				
+					$user['nombre'] = '';
+					$this->load->view('dashboard/menu', $user);
+					$this->load->view('dashboard/usuarios/registrar_usuario', $data);
+					$this->load->view('dashboard/cierredashboard');	
+				}
+		}else{
+			$user['nombre'] = '';
 				$data = array('result' => '', 
 					      'error' => true, 
-					      'mensaje' => 'Registro eliminado satisfactoriamente.',
-					      'class' => 'alert alert-success');
+					      'mensaje' => 'Error! El usuario a eliminar no existe.',
+					      'class' => 'alert alert-danger');				
 				$user['nombre'] = '';
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/usuarios/registrar_usuario', $data);
-				$this->load->view('dashboard/cierredashboard');
-			}
+				$this->load->view('dashboard/cierredashboard');	
+
 		}
+
 
 	}
 
