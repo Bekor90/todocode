@@ -36,7 +36,10 @@ class Login_controller extends CI_Controller {
 					redirect('Dashboard');
 					
 				}else{
-					redirect('Home');
+					$data['result'] = true;
+					$data['mensaje'] = 'Usuario o password incorrectos';
+					$this->load->view('login', $data);
+					//redirect('Home');
 				}
 			}else{
 				//echo 'No se encontro usuario';
