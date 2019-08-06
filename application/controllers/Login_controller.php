@@ -35,7 +35,9 @@ class Login_controller extends CI_Controller {
 					$this->session->set_userdata(array('user_id' => $row->id_usuario, 'log' => TRUE)); 
 					redirect('Dashboard');
 					
-				}						
+				}else{
+					redirect('Home');
+				}
 			}else{
 				//echo 'No se encontro usuario';
 				redirect('Home');
