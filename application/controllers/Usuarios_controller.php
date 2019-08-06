@@ -64,7 +64,8 @@ class Usuarios_controller extends CI_Controller {
 		if($id > 0){
 			$result = $this->Tbl_usuarios_Model->findByUsuarios($id);
 			$data['result'] = $result;
-				$this->load->view('dashboard/menu');
+			$user['nombre'] = '';
+				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/usuarios/editar_usuario', $data);
 				$this->load->view('dashboard/cierredashboard');	
 		}
@@ -115,7 +116,7 @@ class Usuarios_controller extends CI_Controller {
 		if($id >= 0){
 			$result = $this->Tbl_usuarios_Model->deleteUsuario($id);
 			if ($result != FALSE){
-				
+				$user['nombre'] = '';
 				$data = array('result' => '', 
 					      'error' => true, 
 					      'mensaje' => 'Error! El usuario se encuentra vinculado a una tarea, eliminela primero.',
