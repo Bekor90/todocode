@@ -1,5 +1,10 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');?>
-
+	
+	<?php if($error) : ?>
+	   <div class="alert alert-success" role="alert" id="alert">
+	    <center> <?php echo $mensaje; ?> </center>
+	   </div>
+	<?php endif; ?>
 	<center> <h3>Editar Categoria</h3></center>
   	<div class="card-personalizada">
 	 <form id="formrEditarCategoria" method="POST" action="<?=base_url();?>actualizar/categoria">
