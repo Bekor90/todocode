@@ -34,12 +34,17 @@ class Tareas_controller extends CI_Controller {
 
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
-				$mensaje = array('titulo' => 'Tarea', 'body' => 'Registro satisfactorio');
-				redirect('Dashboard/tareas');
-				/*$this->load->view('dashboard/menu');
-				$this->load->view('errors/perzonalizado/mensajes', $mensaje);
-				$this->load->view('dashboard/cierredashboard');	*/
-				
+				$data = array('result' => '', 'error' => true, 'mensaje' => 'No almacenó el registro');
+				$user['nombre'] = '';
+				$this->load->view('dashboard/menu', $user);
+				$this->load->view('dashboard/tareas/registrar_tareas', $data);
+				$this->load->view('dashboard/cierredashboard');	
+			}else{
+				$user['nombre'] = '';
+				$data = array('result' => '', 'error' => true, 'mensaje' => 'Registro almacenado satisfactoriamente');
+				$this->load->view('dashboard/menu', $user);
+				$this->load->view('dashboard/tareas/registrar_tareas', $data);
+				$this->load->view('dashboard/cierredashboard');
 			}
 		}
 	}
