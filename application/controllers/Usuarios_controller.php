@@ -75,8 +75,8 @@ class Usuarios_controller extends CI_Controller {
 		}else{
 			$data = array('result' => '', 
 				      'error' => true, 
-				      'mensaje' => 'Error, al intentar editar',
-			              'class' => 'alert alert-danger');
+				      'mensaje' => 'Se edito satisfactoriamente',
+			              'class' => 'alert alert-success');
 			$user['nombre'] = '';
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/usuarios/editar_usuario', $data);
