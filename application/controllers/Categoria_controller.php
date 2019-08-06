@@ -32,7 +32,7 @@ class Categoria_controller extends CI_Controller {
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
 				$data = array('result' => '', 'error' => true, 
-				'mensaje' => 'No almacenó el registro'
+				'mensaje' => 'No almacenó el registro',
 				'class' => 'alert alert-danger');
 			
 				$user['nombre'] = '';
@@ -42,7 +42,7 @@ class Categoria_controller extends CI_Controller {
 			}else{
 				$user['nombre'] = '';
 				$data = array('result' => '', 'error' => true, 
-				'mensaje' => 'Registro almacenado satisfactoriamente'
+				'mensaje' => 'Registro almacenado satisfactoriamente',
 				'class' => 'alert alert-success');
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/categorias/registrar_categoria', $data);

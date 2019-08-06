@@ -62,7 +62,7 @@ class Tareas_controller extends CI_Controller {
 			$data = array('result' => $result, 
 				      'error' => false, 
 				      'mensaje' => '',
-			              'class' => 'alert alert-danger');
+			          'class' => 'alert alert-danger');
 			$user['nombre'] = '';
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/tareas/editar_tarea', $data);
@@ -71,7 +71,7 @@ class Tareas_controller extends CI_Controller {
 			$data = array('result' => '', 
 				      'error' => true, 
 				      'mensaje' => 'Se editó satisfactoriamente',
-			              'class' => 'alert alert-success');
+			           'class' => 'alert alert-success');
 			$user['nombre'] = '';
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/tareas/editar_tarea', $data);
