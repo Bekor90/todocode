@@ -37,8 +37,17 @@ class Usuarios_controller extends CI_Controller {
 
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
-				$mensaje = array('titulo' => 'Usuario', 'body' => 'Registro satisfactorio');
-				redirect('Dashboard/usuarios');
+				$data = array('result' => '', 'error' => true, 'mensaje' => 'No almacenó el registro');
+				$user['nombre'] = '';
+				$this->load->view('dashboard/menu', $user);
+				$this->load->view('dashboard/usuarios/registrar_usuario', $data);
+				$this->load->view('dashboard/cierredashboard');	
+			}else{
+				$user['nombre'] = '';
+				$data = array('result' => '', 'error' => true, 'mensaje' => 'Registro almacenado satisfactoriamente');
+				$this->load->view('dashboard/menu', $user);
+				$this->load->view('dashboard/categorias/registrar_usuario', $data);
+				$this->load->view('dashboard/cierredashboard');
 			}
 		}
 	}
