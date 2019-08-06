@@ -1,17 +1,17 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');?>
-
+	
+	<?php if($error) : ?>
+		<div class="alert alert-success" role="alert">
+		    <center> <?php echo $mensaje; ?> </center>
+		</div>
+	<?php endif; ?>
 	 <center> <h3>Categorias</h3></center>
 	 <button class="btn btn-primary" data-toggle="collapse" href="#Collapseregistrar" role="button" aria-expanded="false" aria-controls="registrar" id="registrar">Registrar</button>
      <button class="btn btn-primary" data-toggle="collapse" href="#Collapseconsultar" role="button" aria-expanded="false" aria-controls="consultar" id="consultar">Consultar</button>
   	
   	<div class="collapse" id="Collapseregistrar">
-  	<div class="card-personalizada">
-		<?php if($error) : ?>
-			<div class="alert alert-success" role="alert">
-			    <center> <?php echo $mensaje; ?> </center>
-			</div>
-		<?php endif; ?>
+  	<div class="card-personalizada">		
 		<form id="formBusquedaG" method="POST" action="<?=base_url();?>registrar/categoria">
         	<div class="container">
 			<div class="row">
