@@ -33,9 +33,8 @@ class Login_controller extends CI_Controller {
 
 
 				if($emailform == $emaildb  && $passwordform == $passworddb){
-					$this->session->set_userdata(array('user_id' => $row->id_usuario, 'log' => TRUE));
-					$data['usuario'] = $nombre;
-					redirect('Dashboard', $data);
+					$this->session->set_userdata(array('user_id' => $row->id_usuario, 'nombre' => $nombre, 'log' => TRUE));
+					redirect('Dashboard');
 					
 				}else{
 					$data['error'] = true;
