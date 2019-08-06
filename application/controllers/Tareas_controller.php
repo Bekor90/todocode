@@ -107,7 +107,7 @@ class Tareas_controller extends CI_Controller {
 						  'mensaje' => 'Registro editado satisfactoriamente',
 					      'class' => 'alert alert-success');
 				$this->load->view('dashboard/menu', $user);
-				$this->load->view('dashboard/tareas/editar_tarea', $data);
+				$this->load->view('dashboard/tareas/registrar_tareas', $data);
 				$this->load->view('dashboard/cierredashboard');
 			}else{
 				$user['nombre'] = '';
@@ -116,7 +116,7 @@ class Tareas_controller extends CI_Controller {
 					      'mensaje' => 'Error, no se editó el usuario',
 					      'class' => 'alert alert-danger');
 				$this->load->view('dashboard/menu', $user);
-				$this->load->view('dashboard/tareas/editar_tarea', $data);
+				$this->load->view('dashboard/tareas/registrar_tareas', $data);
 				$this->load->view('dashboard/cierredashboard');
 			}
 		}	
