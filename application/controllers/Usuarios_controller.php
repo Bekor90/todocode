@@ -52,7 +52,7 @@ class Usuarios_controller extends CI_Controller {
 					      'mensaje' => 'Registro almacenado satisfactoriamente',
 					      'class' => 'alert alert-success');
 				$this->load->view('dashboard/menu', $user);
-				$this->load->view('dashboard/categorias/registrar_usuario', $data);
+				$this->load->view('dashboard/usuarios/registrar_usuario', $data);
 				$this->load->view('dashboard/cierredashboard');
 			}
 		}
