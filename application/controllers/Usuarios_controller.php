@@ -89,10 +89,24 @@ class Usuarios_controller extends CI_Controller {
 
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
-				$mensaje = array('titulo' => 'Usuario', 'body' => 'Registro satisfactorio');
-				redirect('Dashboard/usuarios');
+				$user['nombre'] = '';
+				$data = array('result' => '', 
+					      'error' => true, 
+					      'mensaje' => 'Error, no se editó el usuario',
+					      'class' => 'alert alert-danger');
+				$this->load->view('dashboard/menu', $user);
+				$this->load->view('dashboard/usuarios/editar_usuario', $data);
+				$this->load->view('dashboard/cierredashboard');
+			}else{
+				$user['nombre'] = '';
+				$data = array('result' => '', 
+					      'error' => true, 
+					      'mensaje' => 'Registro almacenado satisfactoriamente',
+					      'class' => 'alert alert-success');
+				$this->load->view('dashboard/menu', $user);
+				$this->load->view('dashboard/usuarios/editar_usuario', $data);
+				$this->load->view('dashboard/cierredashboard');
 			}
-		}	
 	}
 
 	public function eliminarUsuario($id)
