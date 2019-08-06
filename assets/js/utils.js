@@ -12,7 +12,7 @@ $(document).ready(function(){
       }else{
         isEnable = true;
         $("#consultar").attr('disabled','disabled');
-	$("#registrar").hide();	      
+	$("#alert").hide();	      
       }
     });
 
@@ -24,7 +24,7 @@ $(document).ready(function(){
       }else{
         isEnable = true;
         $("#registrar").attr('disabled','disabled');
-	$("#registrar").hide();
+	$("#alert").hide();
       }
     });
 
