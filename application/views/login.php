@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			</div>
 			<?php if($error) : ?>
 			<div class="alert alert-danger" role="alert">
-  				<?php echo $mensaje ?>
+			    <center> <?php echo $mensaje ?> </center>
 			</div>
 			<?php endif; ?>
 			<div class="card-body">
