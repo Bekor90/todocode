@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
   	<div class="card-personalizada">
 		<?php if($error) : ?>
 			<div class="alert alert-success" role="alert">
-			    <center> <?php echo $mensaje ?> </center>
+			    <center> <?php echo $mensaje; ?> </center>
 			</div>
 		<?php endif; ?>
 		<form id="formBusquedaG" method="POST" action="<?=base_url();?>registrar/categoria">
