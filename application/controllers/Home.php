@@ -5,7 +5,7 @@ class Home extends CI_Controller {
 	 */
 	public function index()
 	{
-		$data['result'] = false;
+		$data['error'] = false;
 		$data['mensaje'] = '';
 		$this->load->view('login', $data);
 	}
