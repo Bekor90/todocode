@@ -28,12 +28,14 @@ class Login_controller extends CI_Controller {
 				foreach ($result as $row) {
 					$emaildb = $row->email;
 					$passworddb = $row->password;
+					$nombre = $row->nombres;
 				}
 
 
 				if($emailform == $emaildb  && $passwordform == $passworddb){
-					$this->session->set_userdata(array('user_id' => $row->id_usuario, 'log' => TRUE)); 
-					redirect('Dashboard');
+					$this->session->set_userdata(array('user_id' => $row->id_usuario, 'log' => TRUE));
+					$data['usuario'] = $nombre;
+					redirect('Dashboard', $data);
 					
 				}else{
 					$data['error'] = true;
