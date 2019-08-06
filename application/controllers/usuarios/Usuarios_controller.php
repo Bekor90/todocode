@@ -96,7 +96,7 @@ class Usuarios_controller extends CI_Controller {
 			$result = $this->Tbl_usuarios_Model->deleteUsuario($id);
 			if ($result != FALSE){
 		
-				redirect('Dashboard/usuario');
+				redirect('Dashboard/usuarios');
 			}
 		}
 
