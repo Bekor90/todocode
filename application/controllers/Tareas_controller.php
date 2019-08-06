@@ -124,32 +124,30 @@ class Tareas_controller extends CI_Controller {
 
 	public function eliminarTarea($id)
 	{		
-		if($id >= 0){
+	    if($id >= 0){
 			$result = $this->Tbl_tarea_Model->deleteTarea($id);
-			if ($result != FALSE){
-		
-				redirect('Dashboard/tareas');
-				$user['nombre'] = '';
+		if ($result != FALSE){					
+			$user['nombre'] = '';
 				$data = array('result' => '', 
-					      'error' => true, 
-					      'mensaje' => 'Error! No se logró eliminar la tarea.',
-					      'class' => 'alert alert-danger');				
+						'error' => true, 
+						'mensaje' => 'Registro eliminado satisfactoriamente.',
+						'class' => 'alert alert-success');				
 				$user['nombre'] = '';
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/tareas/registrar_tareas', $data);
 				$this->load->view('dashboard/cierredashboard');	
 			}else{				
+				$user['nombre'] = '';
 				$data = array('result' => '', 
-					      'error' => true, 
-					      'mensaje' => 'Registro eliminado satisfactoriamente.',
-					      'class' => 'alert alert-success');
+						'error' => true, 
+						'mensaje' => 'No se logró eliminar el registro',
+						'class' => 'alert alert-danger');				
 				$user['nombre'] = '';
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/tareas/registrar_tareas', $data);
-				$this->load->view('dashboard/cierredashboard');
+				$this->load->view('dashboard/cierredashboard');	
 			}
-		}
-
+	    }
 	}
 
 }
