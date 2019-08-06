@@ -70,7 +70,7 @@ class Tbl_tarea_Model extends CI_model {
 	function findTareasCategoria($id_categoria)
 	{
 
-	$this->db->select('id_tarea, titulo, descripcion, id_usuario, estado, id_categoriat');
+	$this->db->select('id_tarea, titulo, descripcion, tarea.id_usuario, estado, tarea.id_categoriat');
 		$this->db->from('tarea');
 		$this->db->join('categoria', 'categoria.id_usuario = tarea.id_categoriat');
 		$this->db->where('categoria.id_categoria', $id_categoria);
