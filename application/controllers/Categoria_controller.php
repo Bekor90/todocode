@@ -51,20 +51,24 @@ class Categoria_controller extends CI_Controller {
 		$data = array('result' => '');
 		if($id >= 0){
 			$result = $this->Tbl_categoria_Model->findByCategoria($id);
-			$data['result'] = $result;
-				$this->load->view('dashboard/menu');
+			$data = array('result' => $result, 
+				      'error' => true, 
+				      'mensaje' => 'Se edito satisfactoriamente',
+			              'class' => 'alert alert-success');
+				$user['nombre'] = '';
+				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/categorias/editar_categoria', $data);
 				$this->load->view('dashboard/cierredashboard');	
 		}else{
 			$data = array('result' => '', 
 				      'error' => true, 
-				      'mensaje' => 'Error, al intentar editar',
-			              'class' => 'alert alert-danger');
+				      'mensaje' => 'Se edito satisfactoriamente',
+			              'class' => 'alert alert-success');
 			$user['nombre'] = '';
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/categorias/editar_categoria', $data);
 				$this->load->view('dashboard/cierredashboard');	
-		}
+		}	
 
 	}
 	public function actualizar()
@@ -84,8 +88,23 @@ class Categoria_controller extends CI_Controller {
 
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
-				$mensaje = array('titulo' => 'Usuario', 'body' => 'Registro satisfactorio');
-				redirect('Dashboard/categorias');
+				$user['nombre'] = '';
+				$data = array('result' => '', 
+					      'error' => true, 
+					      'mensaje' => 'Error, no se editó la categoria',
+					      'class' => 'alert alert-danger');
+				$this->load->view('dashboard/menu', $user);
+				$this->load->view('dashboard/categorias/editar_categoria', $data);
+				$this->load->view('dashboard/cierredashboard');
+			}else{
+				$user['nombre'] = '';
+				$data = array('result' => '', 
+					      'error' => true, 
+					      'mensaje' => 'Registro almacenado satisfactoriamente',
+					      'class' => 'alert alert-success');
+				$this->load->view('dashboard/menu', $user);
+				$this->load->view('dashboard/categorias/editar_categoria', $data);
+				$this->load->view('dashboard/cierredashboard');
 			}
 		}	
 	}
@@ -95,8 +114,25 @@ class Categoria_controller extends CI_Controller {
 		if($id >= 0){
 			$result = $this->Tbl_categoria_Model->deleteCategoria($id);
 			if ($result != FALSE){
-		
-				redirect('Dashboard/categorias');
+
+				$user['nombre'] = '';
+				$data = array('result' => '', 
+					      'error' => true, 
+					      'mensaje' => 'Error! La categoriase encuentra vinculada a una tarea, eliminela primero.',
+					      'class' => 'alert alert-danger');				
+				$user['nombre'] = '';
+				$this->load->view('dashboard/menu', $user);
+				$this->load->view('dashboard/categorias/registrar_categoria', $data);
+				$this->load->view('dashboard/cierredashboard');	
+			}else{				
+				$data = array('result' => '', 
+					      'error' => true, 
+					      'mensaje' => 'Registro eliminado satisfactoriamente.',
+					      'class' => 'alert alert-success');
+				$user['nombre'] = '';
+				$this->load->view('dashboard/menu', $user);
+				$this->load->view('dashboard/categorias/registrar_categoria', $data);
+				$this->load->view('dashboard/cierredashboard');
 			}
 		}
 

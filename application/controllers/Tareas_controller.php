@@ -55,10 +55,24 @@ class Tareas_controller extends CI_Controller {
 		if($id >= 0){
 			$result = $this->Tbl_tarea_Model->findByTarea($id);
 			$data['result'] = $result;
-				$this->load->view('dashboard/menu');
+			$data = array('result' => $result, 
+				      'error' => false, 
+				      'mensaje' => '',
+			              'class' => 'alert alert-danger');
+			$user['nombre'] = '';
+				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/tareas/editar_tarea', $data);
 				$this->load->view('dashboard/cierredashboard');	
-		}
+		}else{
+			$data = array('result' => '', 
+				      'error' => true, 
+				      'mensaje' => 'Se editó satisfactoriamente',
+			              'class' => 'alert alert-success');
+			$user['nombre'] = '';
+				$this->load->view('dashboard/menu', $user);
+				$this->load->view('dashboard/tareas/editar_tarea', $data);
+				$this->load->view('dashboard/cierredashboard');	
+		}	
 
 	}
 	public function actualizar()
@@ -83,8 +97,23 @@ class Tareas_controller extends CI_Controller {
 
 				//mostrar mensaje exitoso
 				//limpiar formulario*/
-				$mensaje = array('titulo' => 'Usuario', 'body' => 'Registro satisfactorio');
-				redirect('Dashboard/tareas');
+				$user['nombre'] = '';
+				$data = array('result' => '', 
+					      'error' => true, 
+					      'mensaje' => 'Error, no se editó la tarea',
+					      'class' => 'alert alert-danger');
+				$this->load->view('dashboard/menu', $user);
+				$this->load->view('dashboard/tareas/editar_tarea', $data);
+				$this->load->view('dashboard/cierredashboard');
+			}else{
+				$user['nombre'] = '';
+				$data = array('result' => '', 
+					      'error' => true, 
+					      'mensaje' => 'Registro almacenado satisfactoriamente',
+					      'class' => 'alert alert-success');
+				$this->load->view('dashboard/menu', $user);
+				$this->load->view('dashboard/tareas/editar_tarea', $data);
+				$this->load->view('dashboard/cierredashboard');
 			}
 		}	
 	}
@@ -96,8 +125,27 @@ class Tareas_controller extends CI_Controller {
 			if ($result != FALSE){
 		
 				redirect('Dashboard/tareas');
+				$user['nombre'] = '';
+				$data = array('result' => '', 
+					      'error' => true, 
+					      'mensaje' => 'Error! No se logró eliminar la tarea.',
+					      'class' => 'alert alert-danger');				
+				$user['nombre'] = '';
+				$this->load->view('dashboard/menu', $user);
+				$this->load->view('dashboard/tareas/registrar_tareas', $data);
+				$this->load->view('dashboard/cierredashboard');	
+			}else{				
+				$data = array('result' => '', 
+					      'error' => true, 
+					      'mensaje' => 'Registro eliminado satisfactoriamente.',
+					      'class' => 'alert alert-success');
+				$user['nombre'] = '';
+				$this->load->view('dashboard/menu', $user);
+				$this->load->view('dashboard/tareas/registrar_tareas', $data);
+				$this->load->view('dashboard/cierredashboard');
 			}
 		}
 
 	}
+
 }

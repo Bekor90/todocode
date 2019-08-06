@@ -109,7 +109,7 @@ class Usuarios_controller extends CI_Controller {
 					      'mensaje' => 'Error, no se editó el usuario',
 					      'class' => 'alert alert-danger');
 				$this->load->view('dashboard/menu', $user);
-				$this->load->view('dashboard/usuarios/registrar_usuario', $data);
+				$this->load->view('dashboard/usuarios/editar_usuario', $data);
 				$this->load->view('dashboard/cierredashboard');
 			}else{
 				$user['nombre'] = '';
@@ -133,7 +133,7 @@ class Usuarios_controller extends CI_Controller {
 				$data = array('result' => '', 
 					      'error' => true, 
 					      'mensaje' => 'Error! El usuario se encuentra vinculado a una tarea, eliminela primero.',
-					      'class' => 'alert alert-success');				
+					      'class' => 'alert alert-danger');				
 				$user['nombre'] = '';
 				$this->load->view('dashboard/menu', $user);
 				$this->load->view('dashboard/usuarios/registrar_usuario', $data);
