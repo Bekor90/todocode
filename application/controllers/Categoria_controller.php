@@ -117,27 +117,34 @@ class Categoria_controller extends CI_Controller {
 	public function eliminarCategoria($id)
 	{		
 		if($id >= 0){
-			$result = $this->Tbl_categoria_Model->deleteCategoria($id);
-			if ($result != FALSE){
+			$tareas = $this->Tbl_tarea_Model->findTareasCategoria($id);
+			if($tareas ){
+				$data = array('result' => '', 
+							'error' => true, 
+							'mensaje' => 'Error! La categoria se encuentra vinculada a una tarea, eliminela primero.',
+							'class' => 'alert alert-danger');
+					$user['nombre'] = '';
+					$this->load->view('dashboard/menu', $user);
+					$this->load->view('dashboard/categorias/registrar_categoria', $data);
+					$this->load->view('dashboard/cierredashboard');
 
-				$user['nombre'] = '';
-				$data = array('result' => '', 
-					      'error' => true, 
-					      'mensaje' => 'Error! La categoriase encuentra vinculada a una tarea, eliminela primero.',
-					      'class' => 'alert alert-danger');				
-				$user['nombre'] = '';
-				$this->load->view('dashboard/menu', $user);
-				$this->load->view('dashboard/categorias/registrar_categoria', $data);
-				$this->load->view('dashboard/cierredashboard');	
-			}else{				
-				$data = array('result' => '', 
-					      'error' => true, 
-					      'mensaje' => 'Registro eliminado satisfactoriamente.',
-					      'class' => 'alert alert-success');
-				$user['nombre'] = '';
-				$this->load->view('dashboard/menu', $user);
-				$this->load->view('dashboard/categorias/registrar_categoria', $data);
-				$this->load->view('dashboard/cierredashboard');
+			}else{
+
+				$result = $this->Tbl_categoria_Model->deleteCategoria($id);
+				if ($result){
+
+					$user['nombre'] = '';
+					$data = array('result' => '', 
+							'error' => true, 
+							'mensaje' => ' Registro eliminado satisfactoriamente.',
+							'class' => 'alert alert-success');				
+					$user['nombre'] = '';
+					$this->load->view('dashboard/menu', $user);
+					$this->load->view('dashboard/categorias/registrar_categoria', $data);
+					$this->load->view('dashboard/cierredashboard');	
+				}else{				
+					
+				}
 			}
 		}
 
